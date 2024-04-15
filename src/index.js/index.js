@@ -14,7 +14,7 @@ async function generateLogo() {
   let textColor;
   while (!validTextColor) {
     textColor = readline.question('Enter text color (color keyword or hexadecimal number): ');
-    // Validate if the input is a valid color keyword or a hexadecimal number
+
     validTextColor = /^(#[0-9A-Fa-f]{6}|[a-zA-Z]+)$/i.test(textColor);
     if (!validTextColor) {
       console.log('Please enter a valid text color keyword or hexadecimal number.');
@@ -30,14 +30,14 @@ async function generateLogo() {
   let shapeColor;
   while (!validShapeColor) {
     shapeColor = readline.question('Enter shape color (color keyword or hexadecimal number): ');
-    // Validate if the input is a valid color keyword or a hexadecimal number
+  
     validShapeColor = /^(#[0-9A-Fa-f]{6}|[a-zA-Z]+)$/i.test(shapeColor);
     if (!validShapeColor) {
       console.log('Please enter a valid shape color keyword or hexadecimal number.');
     }
   }
 
-  const svg = SVG(document.documentElement);
+  const svg = SVG(document.documentElement).size(300, 200);
 
   switch (shape) {
     case 'circle':
