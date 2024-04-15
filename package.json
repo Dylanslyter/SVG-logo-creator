@@ -6,5 +6,10 @@
     "readline-sync": "^1.4.10",
     "svg": "^0.1.0",
     "svgdom": "^0.1.19"
+  },
+    "scripts": {
+      "test": "jest"
+    }
   }
-}
+  
+
