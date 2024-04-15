@@ -9,14 +9,33 @@ async function generateLogo() {
   registerWindow(window, document);
 
   const text = readline.question('Enter up to three characters: ');
-  const textColor = readline.question('Enter text color: ');
+
+  let validTextColor = false;
+  let textColor;
+  while (!validTextColor) {
+    textColor = readline.question('Enter text color (color keyword or hexadecimal number): ');
+    // Validate if the input is a valid color keyword or a hexadecimal number
+    validTextColor = /^(#[0-9A-Fa-f]{6}|[a-zA-Z]+)$/i.test(textColor);
+    if (!validTextColor) {
+      console.log('Please enter a valid text color keyword or hexadecimal number.');
+    }
+  }
 
   console.log('Choose a shape:');
   const shapeOptions = ['circle', 'triangle', 'square'];
   const shapeIndex = readline.keyInSelect(shapeOptions, 'Select shape: ');
   const shape = shapeOptions[shapeIndex];
 
-  const shapeColor = readline.question('Enter shape color: ');
+  let validShapeColor = false;
+  let shapeColor;
+  while (!validShapeColor) {
+    shapeColor = readline.question('Enter shape color (color keyword or hexadecimal number): ');
+    // Validate if the input is a valid color keyword or a hexadecimal number
+    validShapeColor = /^(#[0-9A-Fa-f]{6}|[a-zA-Z]+)$/i.test(shapeColor);
+    if (!validShapeColor) {
+      console.log('Please enter a valid shape color keyword or hexadecimal number.');
+    }
+  }
 
   const svg = SVG(document.documentElement);
 
@@ -54,6 +73,7 @@ async function generateLogo() {
 }
 
 generateLogo();
+
 
 
 
