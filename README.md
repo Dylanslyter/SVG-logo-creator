@@ -7,9 +7,8 @@ By using your command line you can put in certain variables to create a svg logo
 N/A
 
 ## Usage
-This would be used to easily create a simple 3 character logo
-## Credits
+This would be used to easily create a simple 3 character logo 
 
-N/A
+![Screenshot](screenshot.png)
 
-## License
+Video link- https://youtu.be/znsngaJrUmI
